@@ -12,6 +12,9 @@ function onSettings()
     ui.sliderInt("spins", "Spins", 20, 1, 100, 260)
     ui.sliderInt("spin_interval", "Spin Interval (ms)", 8, 1, 50, 260)
     ui.sliderInt("crawl_spin", "Delay Before Spin (ms)", 4, 1, 100, 260)
+    ui.checkbox("flick_rl", "Right-Left Flick", false, 260)
+    ui.sliderInt("flick_delay", "Flick Delay (ms)", 3, 1, 50, 260)
+    ui.sliderInt("flick_amount", "Flick Amount (ms)", 180, 1, 360, 260)
     ui.separator()
     ui.checkbox("insta_crawl", "Instant Crawl", true, 260)
     ui.sliderInt("crawl_delay", "Crawl Delay (ms)", 10, 0, 100, 260)
@@ -33,6 +36,10 @@ function onExecute()
     local spinDelay = settings.spin_delay or 4
     local spinInterval = settings.spin_interval or 8
     local crawlSpin = settings.crawl_spin or 0
+    local flickRL = settings.flick_rl or false
+    local flickDelay = settings.flick_delay or 3
+    local flickAmount = settings.flick_amount or 180
+
     local instaCrawl = settings.insta_crawl ~= true
     local crawlDelay = settings.crawl_delay or 0
     local heldSpace = settings.held_space or 20
@@ -65,9 +72,18 @@ function onExecute()
 
     sleep(spinDelay)
 
-    for i = 1, spins do
-        moveDegrees(180, 0)
-        sleep(spinInterval)
+    if flickRL then
+        for i = 1, spins do
+            moveDegrees(flickAmount, 0)
+            sleep(flickDelay)
+            moveDegrees(-flickAmount, 0)
+            sleep(spinInterval)
+        end
+    else
+        for i = 1, spins do
+            moveDegrees(flickAmount, 0)
+            sleep(spinInterval)
+        end
     end
 
     running = false
