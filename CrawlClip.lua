@@ -8,7 +8,7 @@ local running = false
 
 function onSettings()
     ui.checkbox("no_delay", "No Delay", false, 260)
-    ui.sliderInt("crawl_delay", "Crawl Delay (us)", 5, 0, 50, 260) -- I dont really notice a difference
+    ui.sliderInt("crawl_delay", "Crawl Delay (ms)", 1, 1, 50, 260)
     ui.sliderInt("freeze_duration", "Freeze Duration (ms)", 700, 100, 1000, 260)
 end
 
@@ -21,14 +21,14 @@ function onExecute()
     running = true
     
     local noDelay = settings.no_delay or false
-    local crawlDelay = settings.crawl_delay or 5
+    local crawlDelay = settings.crawl_delay or 1
     local freezeDuration = settings.freeze_duration or 700
 
     if not instantFreeze then
         holdKey("C")
         releaseKey("C")
-        if not noDelay then
-            sleepMicros(crawlDelay)
+        if noDelay ~= false then
+            sleep(crawlDelay)
         end
         freeze(true)
         sleep(freezeDuration)

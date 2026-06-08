@@ -8,7 +8,7 @@ local running = false
 
 function onSettings()
     ui.checkbox("use_freeze", "Use Freeze", false, 260)
-    ui.sliderInt("freeze_duration", "Freeze Duration (ms)", 100, 50, 500, 260)
+    ui.sliderInt("freeze_duration", "Freeze Duration (ms)", 100, 10, 500, 260)
     ui.sliderInt("spins", "Spins", 20, 1, 100, 260)
     ui.sliderInt("spin_interval", "Spin Interval (ms)", 8, 1, 50, 260)
     ui.sliderInt("crawl_spin", "Delay Before Spin (ms)", 4, 1, 100, 260)
