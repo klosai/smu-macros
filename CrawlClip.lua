@@ -1,7 +1,7 @@
 -- @name: Crawl Clip
 -- @desc: Automatically performs a Crawl Clip.
 -- @author: klosai
--- @version: 1.0
+-- @version: 1.1
 -- @keybind: F1
 
 local running = false
@@ -27,9 +27,11 @@ function onExecute()
     if not instantFreeze then
         holdKey("C")
         releaseKey("C")
+
         if noDelay ~= false then
             sleep(crawlDelay)
         end
+        
         freeze(true)
         sleep(freezeDuration)
         freeze(false)
