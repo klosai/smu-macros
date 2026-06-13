@@ -53,10 +53,6 @@ function onSettings()
         if ui.button("load_default", "Default (Consistent)", 260) then
             loadPreset(presets.default)
         end
-
-        if ui.button("load_fast", "Fast", 260) then
-            loadPreset(presets.fast)
-        end
     end
 
     ui.checkbox("advanced", "Show Advanced Settings", false, 260)
