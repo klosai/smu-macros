@@ -1,7 +1,7 @@
 -- @name: Pressure Jump
 -- @desc: Automatically performs a Pressure Jump.
 -- @author: klosai
--- @version: 1.1
+-- @version: 1.2
 -- @keybind: Q
 
 -- Main Functions
@@ -33,7 +33,28 @@ presets.default = {
     crawl_delay = 10,
 
     held_space = 40,
-    space_delay = 10,
+    space_delay = 10
+}
+
+presets.freeze = {
+    use_freeze = true,
+    freeze_after = false,
+    freeze_duration = 100,
+    freeze_delay = 0,
+
+    spins = 20,
+    spin_interval = 8,
+    crawl_spin = 4,
+
+    flick_rl = false,
+    flick_delay = 3,
+    flick_amount = 180,
+
+    insta_crawl = true,
+    crawl_delay = 10,
+
+    held_space = 20,
+    space_delay = 10
 }
 
 -- Settings
@@ -53,6 +74,12 @@ function onSettings()
         if ui.button("load_default", "Default (Consistent)", 260) then
             loadPreset(presets.default)
         end
+
+        if ui.button("load_freeze", "Freeze (Powerful)", 260) then
+            loadPreset(presets.freeze)
+        end
+
+        ui.separator(10)
     end
 
     ui.checkbox("advanced", "Show Advanced Settings", false, 260)
@@ -131,7 +158,7 @@ function onExecute()
     local flickRL = settings.flick_rl or false
     local flickDelay = settings.flick_delay or 3
     local flickAmount = settings.flick_amount or 180
-    
+
     local instaCrawl = settings.insta_crawl ~= true
     local crawlDelay = settings.crawl_delay or 0
     local heldSpace = settings.held_space or 40

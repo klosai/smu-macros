@@ -19,23 +19,21 @@ function onExecute()
     end
 
     running = true
-    
+
     local noDelay = settings.no_delay or false
     local crawlDelay = settings.crawl_delay or 1
     local freezeDuration = settings.freeze_duration or 700
 
-    if not instantFreeze then
-        holdKey("C")
-        releaseKey("C")
+    holdKey("C")
+    releaseKey("C")
 
-        if noDelay ~= false then
-            sleep(crawlDelay)
-        end
-        
-        freeze(true)
-        sleep(freezeDuration)
-        freeze(false)
+    if noDelay then
+        sleep(crawlDelay)
     end
+
+    freeze(true)
+    sleep(freezeDuration)
+    freeze(false)
 
     running = false
 end
