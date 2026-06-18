@@ -4,7 +4,7 @@ Collection of SMU related scripts for various games.
 # Current Scripts
 
 > [!NOTE]
-> This will not go over everything that this script has to offer, it will mostly be to introduce you to the script.
+> This will not go over everything that this script has to offer, it will mostly be to introduce you to the scripts.
 
 ### Roblox
 
@@ -52,13 +52,13 @@ How it works:
 > [!TIP]
 > Recommended to position camera at side or an angle!
 2. Hold the movement key to walk towards the wall.
-3. The script crawl and freeze in order to clip you into the wall.
+3. The script will crawl and freeze in order to clip you into the wall.
 
 > [!NOTE]
 > This can be done manually, but the macro provides more consistent timing.
 
 ##### Default Keybinds
-- `Q` — Activate script
+- `F1` — Activate script
 
 #### Floofy Clip
 Automates the "Floofy Clip" movement glitch in Roblox Prison Life.
