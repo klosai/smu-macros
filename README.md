@@ -64,11 +64,10 @@ How it works:
 Automates the "Floofy Clip" movement glitch in Roblox Prison Life.
 
 How it works:
-1. Position your body against the wall and have your camera positioned either forward, side, or at an angle.
-> [!TIP]
-> Recommended to position camera at side or an angle!
-2. Hold the movement key to walk towards the wall.
-3. The script crawl and freeze in order to clip you into the wall.
+1. Turn on CtrlLock and crawl under an object so your head is partially blocked.
+2. [Optional] Hold "W" to move forward
+3. Press the activation keybind.
+4. The script will uncrawl, jump, and freeze.
 
 > [!NOTE]
 > This can be done manually, but the macro provides more consistent timing.
