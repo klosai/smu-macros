@@ -23,8 +23,8 @@ function onExecute()
 
     sleep(15)
 
-    holdKey("shiftlockKey")
-    releaseKey("shiftlockKey")
+    holdKey(shiftlockKey)
+    releaseKey(shiftlockKey)
 
     sleep(5)
 
@@ -39,8 +39,8 @@ function onExecute()
     releaseKey("Space")
     releaseKey("C")
 
-    holdKey("shiftlockKey")
-    releaseKey("shiftlockKey")
+    holdKey(shiftlockKey)
+    releaseKey(shiftlockKey)
     
     freeze(false)
 
@@ -51,6 +51,5 @@ function onCleanup(reason)
     freeze(false)
     releaseKey("C")
     releaseKey("Space")
-    releaseKey("shiftlockKey")
     running = false
 end

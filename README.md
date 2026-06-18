@@ -4,7 +4,7 @@ Collection of SMU related scripts for various games.
 # Current Scripts
 
 > [!NOTE]
-> This will not go over everything that this script has to offer, it will mostly be to introduce you to the scripts.
+> This will not go over everything that this script has to offer; it will mostly be to introduce you to the scripts.
 
 ### Roblox
 
